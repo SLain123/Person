@@ -1,4 +1,4 @@
-$hello-world: #CC005F;
+$hello-world: #cc005f;
 
 .container {
     width: 80%;
@@ -22,7 +22,7 @@ $hello-world: #CC005F;
     line-height: 1.565;
     margin-bottom: 0;
     text-transform: uppercase;
-    letter-spacing: .3rem;
+    letter-spacing: 5px;
     font-size: 2vw;
     font-family: "Roboto", sans-serif;
     font-weight: 700;
@@ -31,7 +31,6 @@ $hello-world: #CC005F;
 .title {
     color: #FFFFFF;
     font-family: "Roboto", sans-serif;
-    font-size: 8.4rem;
     line-height: 1.071;
     font-size: 7vw;
     margin: 10px 0;
@@ -43,7 +42,7 @@ $hello-world: #CC005F;
     font-size: 1.5vw;
     line-height: 2.4rem;
     text-transform: uppercase;
-    letter-spacing: .2rem;
+    letter-spacing: 5px;
     color: #FFFFFF;
     font-weight: 500;
 
@@ -68,25 +67,17 @@ $hello-world: #CC005F;
 }
 
 .linkBtn {
-    color: #FFFFFF;
-    border-color: rgba(255, 255, 255, 0.5);
-    height: 40px;
+    height: 2vw;
     padding: 12px 25px;
-    margin-top: 10px;
-    font-size: 24px;
+    margin-top: 1vw;
+    font-size: 1.3vw;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    background: rgba(0, 0, 0, 0.5);
-    border: 3px solid #313131;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    font-family: "Roboto", sans-serif;
-    border-radius: 2px;
     font-weight: 500;
-    transition: all 0.3s ease-in-out;
+    letter-spacing: 3px;
+}
 
-    &:hover {
-        border-color: $hello-world;
-    }
+.arrow {
+    margin-left: 15px;
+    width: 1.2vw;
+    height: 1.2vw;
 }

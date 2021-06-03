@@ -1,6 +1,12 @@
 {
-    "HelloWorldPage": {
-        "HelloWorld": "Привет, мир!",
-        "ByeWorld": "Пока, мир!"
+    "header": {
+        "projects": "Проекты",
+        "skills": "Навыки",
+        "timeline": "Шкала прогресса",
+        "contacts": "Контакты"
+    },
+    "welcome": {
+        "name": "Артем Ламзов",
+        "myWorks": " мои работы"
     }
 }

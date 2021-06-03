@@ -1,0 +1,12 @@
+{
+    "header": {
+        "projects": "Projects",
+        "skills": "Skills",
+        "timeline": "TimeLine",
+        "contacts": "Contact"
+    },
+    "welcome": {
+        "name": "Artem Lamzov",
+        "myWorks": "my works"
+    }
+}

@@ -7,6 +7,8 @@ body {
     min-height: 100vh;
 }
 
+/* Common style */
+
 .background {
     background-color: rgba(0, 0, 0, 0.6);
     height: 100%;
@@ -15,6 +17,27 @@ body {
     top: 0;
     left: 0;
 }
+
+.btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.5);
+    border: 3px solid #313131;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+}
+
+.btn:hover {
+    border-color: #cc005f;
+}
+
+/* Fonts */
 
 @font-face {
     font-family: 'Roboto';

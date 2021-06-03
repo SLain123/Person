@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, match } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import classes from './Header.module.scss';
 import logo from './logo.png';
@@ -41,16 +42,17 @@ const getSliceMenu = (
 
 const Header: React.FC<IProps> = ({ match }) => {
     const { url } = match;
+    const { t } = useTranslation();
     const logoLinkClass =
         url === '/'
             ? [classes.logoLink, classes.disabled].join(' ')
             : classes.logoLink;
-
+    
     const menuDataList: IMenuItems[] = [
-        { name: 'Проекты', urlName: 'works' },
-        { name: 'Навыки', urlName: 'skills' },
-        { name: 'TimeLine', urlName: 'time-line' },
-        { name: 'Контакты', urlName: 'contact' },
+        { name: t`header.projects`, urlName: 'works' },
+        { name: t`header.skills`, urlName: 'skills' },
+        { name: t`header.timeline`, urlName: 'time-line' },
+        { name: t`header.contacts`, urlName: 'contact' },
     ];
 
     const menuLeftPart = getSliceMenu(menuDataList, url, 'left');
