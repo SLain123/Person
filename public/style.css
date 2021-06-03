@@ -15,3 +15,27 @@ body {
     top: 0;
     left: 0;
 }
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Medium.woff2') format('woff2');
+    src: url('./fonts/Roboto-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('./fonts/Roboto-Bold.woff2') format('woff2');
+    src: url('./fonts/Roboto-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lara';
+    src: url('./fonts/Lora-Medium.woff2') format('woff2');
+    src: url('./fonts/Lora-Medium.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}

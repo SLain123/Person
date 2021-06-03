@@ -17,7 +17,7 @@ const getSliceMenu = (
     menuDataList: IMenuItems[],
     url: string,
     slice: string = 'left',
-): any => {
+): React.ReactNode => {
     const sliceList =
         slice === 'left'
             ? menuDataList.slice(0, menuDataList.length / 2)
@@ -41,7 +41,10 @@ const getSliceMenu = (
 
 const Header: React.FC<IProps> = ({ match }) => {
     const { url } = match;
-    const logoLinkClass = url === '/' ? [classes.logoLink, classes.disabled].join(' ') : classes.logoLink;
+    const logoLinkClass =
+        url === '/'
+            ? [classes.logoLink, classes.disabled].join(' ')
+            : classes.logoLink;
 
     const menuDataList: IMenuItems[] = [
         { name: 'Проекты', urlName: 'works' },
@@ -54,7 +57,7 @@ const Header: React.FC<IProps> = ({ match }) => {
     const menuRightPart = getSliceMenu(menuDataList, url, 'right');
 
     return (
-        <div className={classes.header}>
+        <header className={classes.header}>
             <ul className={classes.list}>{menuLeftPart}</ul>
             <Link className={logoLinkClass} to='/'>
                 <img
@@ -66,7 +69,7 @@ const Header: React.FC<IProps> = ({ match }) => {
                 />
             </Link>
             <ul className={classes.list}>{menuRightPart}</ul>
-        </div>
+        </header>
     );
 };
 
