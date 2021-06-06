@@ -1,9 +1,102 @@
+$first-size: 45%;
+$second-size: 54%;
+$third-size: 41%;
+$fourth-size: 56%;
+$fifth-size: 54%;
+$sixth-size: 42%;
+$seventh-size: 41%;
+$eighth-size: 57%;
+$ninth-size: 44%;
+
 .projectBlock {
-    width: 80%;
+    width: 85%;
+    max-width: 1280px;
     background: #ffffff;
     position: absolute;
     top: 150px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: 2px;
+    list-style: none;
+    padding: 15px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 75vh;
+    flex-flow: wrap;
+}
+
+.projectItem {
+    transition: all 0.3s ease-in-out;
+    height: 100%;
+    border-radius: 2px;
+
+    &FixHover {
+        z-index: 10;
+        transform: translate(0, 10px) scale(1.05) !important;
+    }
+}
+
+.projectNumber {
+    &1 {
+        min-width: $first-size;
+        width: $first-size;
+        transform: translate(10px, 90px) rotate(-3deg);
+        border: 1px rgb(226, 226, 226) solid;
+    }
+
+    &2 {
+        min-width: $second-size;
+        width: $second-size;
+        transform: translate(-10px, 110px) rotate(2deg);
+    }
+
+    &3 {
+        min-width: $third-size;
+        width: $third-size;
+        transform: translate(40px, 30px) rotate(5deg);
+    }
+
+    &4 {
+        min-width: $fourth-size;
+        width: $fourth-size;
+        transform: translate(0, 60px) rotate(-6deg);
+    }
+
+    &5 {
+        min-width: $fifth-size;
+        width: $fifth-size;
+        transform: translate(0, -10px) rotate(2deg);
+    }
+
+    &6 {
+        min-width: $sixth-size;
+        width: $sixth-size;
+        transform: translate(-35px, -20px) rotate(2deg);
+        border: 1px rgb(226, 226, 226) solid;
+    }
+
+    &7 {
+        min-width: $seventh-size;
+        width: $seventh-size;
+        transform: translate(20px, -80px) rotate(2deg);
+        border: 1px rgb(226, 226, 226) solid;
+    }
+
+    &8 {
+        min-width: $eighth-size;
+        width: $eighth-size;
+        transform: translate(-20px, -50px) rotate(-3deg);
+        border: 1px rgb(226, 226, 226) solid;
+    }
+
+    &9 {
+        min-width: $ninth-size;
+        width: $ninth-size;
+        transform: rotate(2deg);
+        position: absolute;
+        top: 15%;
+        left: 5%;
+        height: auto;
+    }
 }

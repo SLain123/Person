@@ -1,3 +1,26 @@
-.itemBlock {
-    color: red;
+.workItem {
+    &Pic {
+        width: 100%;
+        height: 100%;
+
+        &:hover {
+            filter: brightness(35%);
+        }
+      }
+
+    &Btn {
+        width: 100%;
+        background: transparent;
+        border: none;
+        padding: 0;
+        display: flex;
+    }
+
+    &Title {
+        position: absolute;
+        color: #ffffff;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
