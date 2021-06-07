@@ -5,7 +5,7 @@ $fourth-size: 56%;
 $fifth-size: 54%;
 $sixth-size: 42%;
 $seventh-size: 41%;
-$eighth-size: 57%;
+$eighth-size: 54%;
 $ninth-size: 44%;
 
 .projectBlock {
@@ -33,7 +33,7 @@ $ninth-size: 44%;
 
     &FixHover {
         z-index: 10;
-        transform: translate(0, 10px) scale(1.05) !important;
+        transform: translate(0, 5px) scale(1.05) !important;
     }
 }
 

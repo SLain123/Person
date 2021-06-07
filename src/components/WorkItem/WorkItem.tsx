@@ -8,17 +8,17 @@ interface Props {
 }
 
 const WorkItem: React.FC<Props> = ({ data }) => {
-    const { id, imgLink, gitLink, prodLink, description } = data;
-    const { title, subTitle, techTasks } = description;
+    const { imgLink, description } = data;
+    const { title } = description;
 
     return (
         <button className={classes.workItemBtn} type='button'>
+            <p className={classes.workItemTitle}>{title}</p>
             <img
                 className={classes.workItemPic}
                 src={imgLink}
                 alt='screenshot of the project'
             />
-            <p className={classes.workItemTitle}>{title}</p>
         </button>
     );
 };

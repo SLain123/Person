@@ -9,7 +9,7 @@ const ProjectsData = (): ProjectProps[] => {
             id: 1,
             imgLink: 'https://i.ibb.co/f9bqSG9/israel.jpg',
             description: {
-                title: 'Landing Page Israel',
+                title: 'landing page israel',
                 subTitle: t`israel.subTitle`,
                 techTasks: {
                     common: t`israel.techTasks`,
@@ -34,7 +34,7 @@ const ProjectsData = (): ProjectProps[] => {
             id: 2,
             imgLink: 'https://i.ibb.co/tP2N4J3/movie.jpg',
             description: {
-                title: 'Landing Page Israel',
+                title: 'movie db',
                 subTitle: t`israel.subTitle`,
                 techTasks: {
                     common: t`israel.techTasks`,
@@ -59,7 +59,7 @@ const ProjectsData = (): ProjectProps[] => {
             id: 3,
             imgLink: 'https://i.ibb.co/2YdgYpD/avia.jpg',
             description: {
-                title: 'Landing Page Israel',
+                title: 'avia sales app',
                 subTitle: t`israel.subTitle`,
                 techTasks: {
                     common: t`israel.techTasks`,
@@ -84,7 +84,7 @@ const ProjectsData = (): ProjectProps[] => {
             id: 4,
             imgLink: 'https://i.ibb.co/r6J0HWx/traffic-light.jpg',
             description: {
-                title: 'Landing Page Israel',
+                title: 'traffic light',
                 subTitle: t`israel.subTitle`,
                 techTasks: {
                     common: t`israel.techTasks`,
@@ -109,7 +109,7 @@ const ProjectsData = (): ProjectProps[] => {
             id: 5,
             imgLink: 'https://i.ibb.co/Fhxck7X/witcher.jpg',
             description: {
-                title: 'Landing Page Israel',
+                title: 'the witcher',
                 subTitle: t`israel.subTitle`,
                 techTasks: {
                     common: t`israel.techTasks`,
@@ -134,7 +134,7 @@ const ProjectsData = (): ProjectProps[] => {
             id: 6,
             imgLink: 'https://i.ibb.co/qRcZ5Rf/book.jpg',
             description: {
-                title: 'Landing Page Israel',
+                title: 'book store',
                 subTitle: t`israel.subTitle`,
                 techTasks: {
                     common: t`israel.techTasks`,
@@ -159,7 +159,7 @@ const ProjectsData = (): ProjectProps[] => {
             id: 7,
             imgLink: 'https://i.ibb.co/jhytvsZ/constructor.jpg',
             description: {
-                title: 'Landing Page Israel',
+                title: 'web constructor',
                 subTitle: t`israel.subTitle`,
                 techTasks: {
                     common: t`israel.techTasks`,
@@ -184,7 +184,7 @@ const ProjectsData = (): ProjectProps[] => {
             id: 8,
             imgLink: 'https://i.ibb.co/80y45Tc/realworld-blog.jpg',
             description: {
-                title: 'Landing Page Israel',
+                title: 'realworld blog',
                 subTitle: t`israel.subTitle`,
                 techTasks: {
                     common: t`israel.techTasks`,
@@ -209,7 +209,7 @@ const ProjectsData = (): ProjectProps[] => {
             id: 9,
             imgLink: 'https://i.ibb.co/7gRVXsV/cps.jpg',
             description: {
-                title: 'Landing Page Israel',
+                title: 'cps',
                 subTitle: t`israel.subTitle`,
                 techTasks: {
                     common: t`israel.techTasks`,
