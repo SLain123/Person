@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
-import { useAppDispatch } from '../../store/hooks';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import WorkItem from '../../components/WorkItem';
 import WorkModal from '../../components/WorkModal';
 import ProjectsData from './projectsData';
-import { changeId } from './projectsSlice';
+import { changeId, selectProjectId } from './projectsSlice';
 
 import classes from './Projects.module.scss';
 
 const Projects: React.FC = () => {
     const [activeProject, setActiveProject] = useState<null | number>(null);
+    const activeProjectId = useAppSelector(selectProjectId);
     const dispatch = useAppDispatch();
-
     const projectData = ProjectsData();
+
     const projectList = projectData.map((data) => {
-        const { id } = data;
+        const { id, description, imgLink } = data;
         const style =
             activeProject === data.id
                 ? [
@@ -30,17 +31,22 @@ const Projects: React.FC = () => {
                 onMouseEnter={() => setActiveProject(id)}
                 onClick={() => dispatch(changeId(id))}
             >
-                <WorkItem data={data} />
+                <WorkItem description={description} imgLink={imgLink} />
             </li>
         );
     });
 
-    return (
-        <>
+    const contentBlock =
+        activeProjectId === null ? (
             <ul className={classes.projectBlock}>{projectList}</ul>
-            <WorkModal />
-        </>
-    );
+        ) : (
+            <WorkModal
+                projectData={projectData}
+                activeProjectId={activeProjectId}
+            />
+        );
+
+    return contentBlock;
 };
 
 export default Projects;

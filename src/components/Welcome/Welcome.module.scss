@@ -24,13 +24,13 @@ $hello-world: #cc005f;
     text-transform: uppercase;
     letter-spacing: 5px;
     font-size: 2vw;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 700;
 }
 
 .title {
-    color: #FFFFFF;
-    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.071;
     font-size: 7vw;
     margin: 10px 0;
@@ -38,23 +38,23 @@ $hello-world: #cc005f;
 }
 
 .subTitle {
-    font-family: "Lora", serif;
+    font-family: 'Lora', serif;
     font-size: 1.5vw;
     line-height: 2.4rem;
     text-transform: uppercase;
     letter-spacing: 5px;
-    color: #FFFFFF;
+    color: #ffffff;
     font-weight: 500;
 
     &:first-child::before {
-        content: "|";
+        content: '|';
         display: inline-block;
         padding: 0 14px 0 8px;
         color: rgba(255, 255, 255, 0.3);
     }
 
     &::after {
-        content: "|";
+        content: '|';
         text-align: center;
         display: inline-block;
         padding: 0 8px 0 14px;
@@ -67,13 +67,43 @@ $hello-world: #cc005f;
 }
 
 .linkBtn {
-    height: 2vw;
-    padding: 12px 25px;
-    margin-top: 1vw;
-    font-size: 1.3vw;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    position: relative;
+    padding: 15px 30px;
+    border: 1px solid;
+    border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+    border-image-slice: 1;
+    margin: 10px 20px;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 3px;
+    overflow: hidden;
+    letter-spacing: 2px;
+    transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 0;
+        width: 100%;
+        z-index: -1;
+        color: white;
+        background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+        transition: 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    &:hover {
+        background: rgba(255, 255, 255, 0);
+    }
+
+    &:hover:before {
+        bottom: 0%;
+        top: auto;
+        height: 100%;
+    }
 }
 
 .arrow {

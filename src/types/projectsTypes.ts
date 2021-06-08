@@ -3,10 +3,11 @@ interface techTasks {
   items: string[];
 }
 
-interface description {
+export interface description {
   title: string;
   subTitle: string;
   techTasks: techTasks;
+  stack: string[];
 }
 
 export interface ProjectProps {

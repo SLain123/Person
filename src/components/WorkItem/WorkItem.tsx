@@ -1,14 +1,14 @@
 import React from 'react';
-import { ProjectProps } from '../../types/projectsTypes';
+import { description } from '../../types/projectsTypes';
 
 import classes from './WorkItem.module.scss';
 
 interface Props {
-    data: ProjectProps;
+    description: description;
+    imgLink: string;
 }
 
-const WorkItem: React.FC<Props> = ({ data }) => {
-    const { imgLink, description } = data;
+const WorkItem: React.FC<Props> = ({ description, imgLink }) => {
     const { title } = description;
 
     return (
@@ -18,6 +18,8 @@ const WorkItem: React.FC<Props> = ({ data }) => {
                 className={classes.workItemPic}
                 src={imgLink}
                 alt='screenshot of the project'
+                width={550}
+                height={370}
             />
         </button>
     );
