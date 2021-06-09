@@ -4,10 +4,10 @@ import { changeId } from '../../features/projects/projectsSlice';
 import { ProjectProps } from '../../types/projectsTypes';
 import { useTranslation } from 'react-i18next';
 
+import GithubSvg from './GithubSvg';
+import WwwSvg from './WwwSvg';
 import classes from './WorkModal.module.scss';
 import close from './close.svg';
-import github from './github.svg';
-import browser from './browser.svg';
 
 interface Props {
     projectData: ProjectProps[];
@@ -80,12 +80,7 @@ const WorkModal: React.FC<Props> = ({ projectData, activeProjectId }) => {
                         rel='noopener noreferrer'
                         aria-label='link to github project'
                     >
-                        <img
-                            src={github}
-                            alt='git logo'
-                            width={64}
-                            height={64}
-                        />
+                        <GithubSvg />
                     </a>
                     <a
                         href={prodLink}
@@ -93,12 +88,7 @@ const WorkModal: React.FC<Props> = ({ projectData, activeProjectId }) => {
                         rel='noopener noreferrer'
                         aria-label='link to ready-made project in the cloud'
                     >
-                        <img
-                            src={browser}
-                            alt='ready-make logo'
-                            width={64}
-                            height={64}
-                        />
+                        <WwwSvg />
                     </a>
                 </div>
             </div>

@@ -7,7 +7,7 @@ $link-active: #920849;
 
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     position: relative;
     padding-top: 5px;
     
@@ -53,6 +53,7 @@ $link-active: #920849;
 
 .logoLink {
     z-index: 1;
+    margin: 0 80px;
 }
 
 .disabled {

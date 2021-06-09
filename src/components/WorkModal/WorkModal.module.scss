@@ -47,7 +47,6 @@ $tag-grad: linear-gradient(
     display: flex;
     flex-flow: column;
     justify-content: space-between;
-
 }
 
 .rightBlock {
@@ -123,11 +122,30 @@ $tag-grad: linear-gradient(
     }
 }
 
-.linkBlock {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin: 20px 0;
+.link {
+    &Block {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin: 20px 0;
+
+        & a {
+            cursor: pointer;
+            opacity: 0.9;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    &Pic {
+        transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        &:hover {
+            fill: #cc005f;
+        }
+    }
 }
 
 @keyframes stagger {
