@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useAppDispatch } from '../../store/hooks';
 import { changeId } from '../../features/projects/projectsSlice';
 import { ProjectProps } from '../../types/projectsTypes';
+import { useTranslation } from 'react-i18next';
 
 import classes from './WorkModal.module.scss';
 import close from './close.svg';
@@ -14,6 +15,7 @@ interface Props {
 }
 
 const WorkModal: React.FC<Props> = ({ projectData, activeProjectId }) => {
+    const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const data = projectData.filter((data) =>
         activeProjectId === data.id ? data : null,
@@ -67,7 +69,7 @@ const WorkModal: React.FC<Props> = ({ projectData, activeProjectId }) => {
                 />
                 <div>
                     <p className={classes.stackTitle}>
-                        Стек технологий задействованный в проекте:
+                        {t`projectModal.stack`}
                     </p>
                     <ul className={classes.stackList}>{stackList}</ul>
                 </div>

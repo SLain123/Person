@@ -8,5 +8,110 @@
     "welcome": {
         "name": "Artem Lamzov",
         "myWorks": "my works"
+    },
+    "israel": {
+        "subTitle": "The project is a landing page for a company that takes students on internships to Israel.",
+        "techTasks": "According to the terms of reference, the following functionality is implemented:",
+        "techTasksFirst": "Markup and styling, including adaptive layout. Pixel Perfect layout.",
+        "techTasksSecond": "Smooth scrolling of the page by clicking on the button in the title section.",
+        "techTasksThird": "Two modal windows: the submission form and the successful submission message.",
+        "techTasksFourth": "Validation of all forms, both modal window and page forms.",
+        "techTasksFifth": "Mask for checking the correct format of the phone in the forms.",
+        "techTasksSixth": "Sending data to localStorage and parsing the data back to the site if available in LS.",
+        "techTasksSeventh": "Button-Tabs.",
+        "techTasksEighth": "Two sliders. Connected using a third-party Sweper library.",
+        "techTasksNinth": "List-Accordion.",
+        "techTasksTenth": "Support for the legacy IE11 browser."
+    },
+    "movie": {
+        "subTitle": "The project implements an interface for displaying and filtering the list of movies based on the open API from themoviedb.org",
+        "techTasks": "Implemented the following features:",
+        "techTasksFirst": "Search for keyword in the title of the film.",
+        "techTasksSecond": "Display card containing film poster, description, release date, genre, and rating of this film.",
+        "techTasksThird": "The Possibility of placing your own rating based on the temporary guest account.",
+        "techTasksFourth": "Getting a personal list of movies based on previously assigned rating",
+        "techTasksFifth": "Multi-view received list (pagination)",
+        "techTasksSixth": "Adaptive for all popular screen types"
+    },
+    "avia": {
+        "subTitle": "Pretty popular test job from the company Avia Sales, previously actively used in the admission of candidates for the position React Developer",
+        "techTasks": "According to the specifications implemented the following features:",
+        "techTasksFirst": "Markup and styling, including adaptive layout.",
+        "techTasksSecond": "Render a set of tickets received from the API, not waiting for the download of the entire pool of tickets, with the subsequent dynamic filtering in the course of obtaining new data.",
+        "techTasksThird": "Implemented filtering tickets based on the filter: the cheapest, the fastest.",
+        "techTasksFourth": "Implemented algorithm to filter optimal tickets.",
+        "techTasksFifth": "Implemented filtering based on the number of transplants.",
+        "techTasksSixth": "Implemented a button to render additional tickets above the base number (+5 tickets).",
+        "techTasksSeventh": "Error Handling failure while loading data."
+    },
+    "traffic": {
+        "subTitle": "A test task used in one of the companies to select candidates for the position of Vue Developer. A similar technical specification was implemented, but on the React/Redux stack.",
+        "techTasks": "Required to develop single page application (SPA) is an emulator of the traffic light.",
+        "techTasksFirst": "The App should be of a model of a traffic light and have 3 screen:",
+        "techTasksSecond": "Screen 1: red (green and dull yellow/translucent), routing ‘/red’.",
+        "techTasksThird": "Screen 2: yellow led (green and dull red/translucent), routing ‘/yellow’.",
+        "techTasksFourth": "Screen 3: lights green (red and dull yellow/translucent), routing ‘/green’.",
+        "techTasksFifth": "Launch of the light should occur immediately after opening the app.",
+        "techTasksSixth": "Traffic light to start its work with any signal, depending on the screen and should work in a loop: red ('red') -> yellow('/yellow') -> green('/green') -> yellow('/yellow') -> red ('red') -> yellow('/yellow') -> ...",
+        "techTasksSeventh": "When you change the signal must change as well Routh (the address in the address bar).",
+        "techTasksEighth": "Red burns for 10 seconds, the Yellow lit for 3 seconds, the Green led is on for 15 seconds.",
+        "techTasksNinth": "Implement a timer showing how many seconds are left before the change of light.",
+        "techTasksTenth": "Implement the flashing of the traffic light signal if there are less than 3 seconds left before its change.",
+        "techTasksEleventh": "Implement a mechanism that allows you to save the state of the traffic light and start it from the same moment when the page is reloaded."
+    },
+    "witcher": {
+        "subTitle": "The project is a promo page for the Witcher series. Page entry point for the transfer of users on thematic resources devoted to the series.",
+        "techTasks": "In the implemented project:",
+        "techTasksFirst": "Markup and styling, including adaptive layout.",
+        "techTasksSecond": "Modal dialog with dynamic content depending on the link that opened it.",
+        "techTasksThird": "Slider (taken from a third-party library and redesigned)",
+        "techTasksFourth": "Hamburger menu for the mobile version of the site."
+    },
+    "book": {
+        "subTitle": "Training project, whose task is to implement the online store of books, with the functionality of the shopping cart.",
+        "techTasks": "Implemented the following features:",
+        "techTasksFirst": "the layout of the interface adaption up to tablet screens.",
+        "techTasksSecond": "Filling storefront on the basis of the obtained data. Mook data is used.",
+        "techTasksThird": "Shopping cart with the functionality of adding / removing goods.",
+        "techTasksFourth": "Accounting for the quantity and amount of goods in the cart."
+    },
+    "constructor": {
+        "subTitle": "The project is a platform for constructing simple websites based on 5 basic HTML elements. Allows to construct a simple basic website and get the html code + css.",
+        "techTasks": "In the implemented project:",
+        "techTasksFirst": "Create 5 basic html elements.",
+        "techTasksSecond": "Styling elements that you create.",
+        "techTasksThird": "Protection from incorrect stylistic data.",
+        "techTasksFourth": "Option to save the generated markup and download it (LS).",
+        "techTasksFifth": "Getting ready html/css in a modal window with the ability to quickly copy.",
+        "techTasksSixth": "Getting ready html/css as files packed in an archive.",
+        "Techtaskseventh": "Hiding the panel for creating elements.",
+        "techTasksEighth": "Adaptive to the level of tablet screens.",
+        "techTasksNinth": "The ability to quickly clean the interface."
+    },
+    "blog": {
+        "subTitle": "The training project is a typical blog with the ability to register/authenticate, with the functionality to leave/view posts. Implemented on the public API.",
+        "techTasks": "Implemented the following features:",
+        "techTasksFirst": "Markup and styling, including adaptive layout.",
+        "techTasksSecond": "Getting the first five posts and their drawing with the ability to browse to and view a specific post.",
+        "techTasksThird": "Paged data retrieval and viewing them (pagination).",
+        "techTasksFourth": "Account registration and login functionality.",
+        "techTasksFifth": "Validation of all forms.",
+        "techTasksSixth": "Routing that takes into account the user's authorization status.",
+        "techTasksSeventh": "Ability to edit the profile of an already created user.",
+        "techTasksEighth": "Functionality for creating and editing articles, checking whether an article belongs to a specific user.",
+        "techTasksNinth": "Animation of forms and individual elements using an additional library.",
+        "techTasksTenth": "Error handling when data loading fails."
+    },
+    "cps": {
+        "subTitle": "The Project represents a typical website of the company for the repair of equipment.",
+        "techTasks": "According to the specifications implemented the following features:",
+        "techTasksFirst": "HTML/CSS layout-with adaptive on all type of screens.",
+        "techTasksSecond": "Modal/sidebar menu for mobile/tablet version.",
+        "techTasksThird": "Animation of buttons.",
+        "techTasksFourth": "Three sliders for the mobile version of the website.",
+        "techTasksFifth": "Block accordion."
+    },
+    "projectModal": {
+        "stack": "The technology stack involved in the project:"
     }
 }
