@@ -4,7 +4,7 @@ import { changeId } from '../../features/projects/projectsSlice';
 import { ProjectProps } from '../../types/projectsTypes';
 import { useTranslation } from 'react-i18next';
 
-import GithubSvg from './GithubSvg';
+import GithubSvg from './GitSvg';
 import WwwSvg from './WwwSvg';
 import classes from './WorkModal.module.scss';
 import close from './close.svg';
@@ -38,18 +38,29 @@ const WorkModal: React.FC<Props> = ({ projectData, activeProjectId }) => {
     ));
 
     const closeModalWindow = () => dispatch(changeId(null));
-    const changeDisplayProject = (e: string | any) => {
-        if (e === 'prev' || e.code === 'ArrowLeft' || e.code === 'KeyA') {
+    const changeProjectForKey = (e: KeyboardEvent) => {
+        if (e.code === 'ArrowLeft' || e.code === 'KeyA') {
             if (activeProjectId === 1) {
                 dispatch(changeId(projectData.length));
             } else {
                 dispatch(changeId(activeProjectId - 1));
             }
-        } else if (
-            e === 'next' ||
-            e.code === 'ArrowRight' ||
-            e.code === 'KeyD'
-        ) {
+        } else if (e.code === 'ArrowRight' || e.code === 'KeyD') {
+            if (activeProjectId === projectData.length) {
+                dispatch(changeId(1));
+            } else {
+                dispatch(changeId(activeProjectId + 1));
+            }
+        }
+    };
+    const changeProjectForBtn = (e: string) => {
+        if (e === 'prev') {
+            if (activeProjectId === 1) {
+                dispatch(changeId(projectData.length));
+            } else {
+                dispatch(changeId(activeProjectId - 1));
+            }
+        } else if (e === 'next') {
             if (activeProjectId === projectData.length) {
                 dispatch(changeId(1));
             } else {
@@ -62,13 +73,13 @@ const WorkModal: React.FC<Props> = ({ projectData, activeProjectId }) => {
         const back = document.querySelector('.background');
         if (back) {
             back.addEventListener('click', closeModalWindow);
-            window.addEventListener('keydown', changeDisplayProject);
+            window.addEventListener('keydown', changeProjectForKey);
         }
 
         return () => {
             if (back) {
                 back.removeEventListener('click', closeModalWindow);
-                window.removeEventListener('keydown', changeDisplayProject);
+                window.removeEventListener('keydown', changeProjectForKey);
             }
         };
     });
@@ -87,9 +98,7 @@ const WorkModal: React.FC<Props> = ({ projectData, activeProjectId }) => {
                 type='button'
                 aria-label='display previous project'
                 className={[classes.manageBtn, classes.prevBtn].join(' ')}
-                onClick={() => {
-                    changeDisplayProject('prev');
-                }}
+                onClick={() => changeProjectForBtn('prev')}
             >
                 <img src={prev} alt='previousBtn' width={50} height={50} />
             </button>
@@ -97,9 +106,7 @@ const WorkModal: React.FC<Props> = ({ projectData, activeProjectId }) => {
                 type='button'
                 aria-label='display next project'
                 className={[classes.manageBtn, classes.nextBtn].join(' ')}
-                onClick={() => {
-                    changeDisplayProject('next');
-                }}
+                onClick={() => changeProjectForBtn('next')}
             >
                 <img src={next} alt='nextBtn' width={50} height={50} />
             </button>
