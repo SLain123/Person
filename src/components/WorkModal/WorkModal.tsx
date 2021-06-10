@@ -8,6 +8,8 @@ import GithubSvg from './GithubSvg';
 import WwwSvg from './WwwSvg';
 import classes from './WorkModal.module.scss';
 import close from './close.svg';
+import prev from './prev.svg';
+import next from './next.svg';
 
 interface Props {
     projectData: ProjectProps[];
@@ -36,16 +38,37 @@ const WorkModal: React.FC<Props> = ({ projectData, activeProjectId }) => {
     ));
 
     const closeModalWindow = () => dispatch(changeId(null));
+    const changeDisplayProject = (e: string | any) => {
+        if (e === 'prev' || e.code === 'ArrowLeft' || e.code === 'KeyA') {
+            if (activeProjectId === 1) {
+                dispatch(changeId(projectData.length));
+            } else {
+                dispatch(changeId(activeProjectId - 1));
+            }
+        } else if (
+            e === 'next' ||
+            e.code === 'ArrowRight' ||
+            e.code === 'KeyD'
+        ) {
+            if (activeProjectId === projectData.length) {
+                dispatch(changeId(1));
+            } else {
+                dispatch(changeId(activeProjectId + 1));
+            }
+        }
+    };
 
     useEffect(() => {
         const back = document.querySelector('.background');
         if (back) {
             back.addEventListener('click', closeModalWindow);
+            window.addEventListener('keydown', changeDisplayProject);
         }
 
         return () => {
             if (back) {
                 back.removeEventListener('click', closeModalWindow);
+                window.removeEventListener('keydown', changeDisplayProject);
             }
         };
     });
@@ -59,6 +82,26 @@ const WorkModal: React.FC<Props> = ({ projectData, activeProjectId }) => {
                 onClick={closeModalWindow}
             >
                 <img src={close} alt='closeBtn' width={42} height={42} />
+            </button>
+            <button
+                type='button'
+                aria-label='display previous project'
+                className={[classes.manageBtn, classes.prevBtn].join(' ')}
+                onClick={() => {
+                    changeDisplayProject('prev');
+                }}
+            >
+                <img src={prev} alt='previousBtn' width={50} height={50} />
+            </button>
+            <button
+                type='button'
+                aria-label='display next project'
+                className={[classes.manageBtn, classes.nextBtn].join(' ')}
+                onClick={() => {
+                    changeDisplayProject('next');
+                }}
+            >
+                <img src={next} alt='nextBtn' width={50} height={50} />
             </button>
 
             <div className={classes.leftBlock}>

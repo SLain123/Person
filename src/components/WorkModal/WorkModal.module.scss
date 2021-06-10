@@ -6,7 +6,7 @@ $tag-grad: linear-gradient(
 );
 
 .workModal {
-    width: 85%;
+    width: 90%;
     max-width: 1280px;
     background: #ffffff;
     position: absolute;
@@ -15,7 +15,7 @@ $tag-grad: linear-gradient(
     transform: translateX(-50%);
     border-radius: 2px;
     list-style: none;
-    padding: 15px;
+    padding: 15px 50px;
     margin: 0;
     display: flex;
     flex-flow: wrap;
@@ -24,10 +24,11 @@ $tag-grad: linear-gradient(
 .closeBtn {
     position: absolute;
     top: 2px;
-    right: 5px;
+    right: 2px;
     border: none;
     background: transparent;
     cursor: pointer;
+    z-index: 10;
 
     &:hover {
         -webkit-animation-duration: 1.3s;
@@ -43,7 +44,7 @@ $tag-grad: linear-gradient(
 }
 
 .leftBlock {
-    width: 55%;
+    width: 57%;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
@@ -146,6 +147,31 @@ $tag-grad: linear-gradient(
             fill: #cc005f;
         }
     }
+}
+
+.manageBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    opacity: 0.4;
+    min-height: 100%;
+
+    &:hover {
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+.prevBtn {
+    left: 0;
+}
+
+.nextBtn {
+    right: 0;
 }
 
 @keyframes stagger {
