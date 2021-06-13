@@ -7,7 +7,6 @@ import { changeId, selectProjectId } from './projectsSlice';
 import { CSSTransition } from 'react-transition-group';
 
 import classes from './Projects.module.scss';
-import './style.css';
 
 const Projects: React.FC = () => {
     const [activeProject, setActiveProject] = useState<number>(1);
