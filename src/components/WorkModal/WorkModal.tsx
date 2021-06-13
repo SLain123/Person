@@ -14,9 +14,10 @@ import next from './next.svg';
 interface Props {
     projectData: ProjectProps[];
     activeProjectId: number;
+    setDisplayModal: any;
 }
 
-const WorkModal: React.FC<Props> = ({ projectData, activeProjectId }) => {
+const WorkModal: React.FC<Props> = ({ projectData, activeProjectId, setDisplayModal }) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const data = projectData.filter((data) =>
@@ -37,19 +38,19 @@ const WorkModal: React.FC<Props> = ({ projectData, activeProjectId }) => {
         </li>
     ));
 
-    const closeModalWindow = () => dispatch(changeId(null));
+    const closeModalWindow = () => setDisplayModal(false);
     const changeProjectForKey = (e: KeyboardEvent) => {
         if (e.code === 'ArrowLeft' || e.code === 'KeyA') {
             if (activeProjectId === 1) {
                 dispatch(changeId(projectData.length));
             } else {
-                dispatch(changeId(activeProjectId - 1));
+                dispatch(changeId(activeProjectId! - 1));
             }
         } else if (e.code === 'ArrowRight' || e.code === 'KeyD') {
             if (activeProjectId === projectData.length) {
                 dispatch(changeId(1));
             } else {
-                dispatch(changeId(activeProjectId + 1));
+                dispatch(changeId(activeProjectId! + 1));
             }
         }
     };
@@ -58,19 +59,20 @@ const WorkModal: React.FC<Props> = ({ projectData, activeProjectId }) => {
             if (activeProjectId === 1) {
                 dispatch(changeId(projectData.length));
             } else {
-                dispatch(changeId(activeProjectId - 1));
+                dispatch(changeId(activeProjectId! - 1));
             }
         } else if (e === 'next') {
             if (activeProjectId === projectData.length) {
                 dispatch(changeId(1));
             } else {
-                dispatch(changeId(activeProjectId + 1));
+                dispatch(changeId(activeProjectId! + 1));
             }
         }
     };
 
     useEffect(() => {
         const back = document.querySelector('.background');
+        
         if (back) {
             back.addEventListener('click', closeModalWindow);
             window.addEventListener('keydown', changeProjectForKey);
