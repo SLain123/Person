@@ -16,6 +16,37 @@ $hello-world: #cc005f;
     align-items: center;
 }
 
+.titleList {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.titleItemEnter {
+    opacity: 0;
+    transform: translateY(-200px);
+
+    &Active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 1000ms, transform 500ms;
+    }
+}
+
+.imgEnter {
+    opacity: 0;
+    transform: translateY(200px);
+
+    &Active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 1000ms, transform 500ms;
+    }
+}
+
 .helloWorld {
     color: $hello-world;
     text-transform: uppercase;
@@ -110,5 +141,5 @@ $hello-world: #cc005f;
 .arrow {
     margin-left: 15px;
     width: 20px;
-    height: 20px
+    height: 20px;
 }

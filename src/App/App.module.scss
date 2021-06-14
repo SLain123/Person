@@ -1,0 +1,21 @@
+.mainBlock {
+    position: absolute;
+}
+
+.mainBlockEnter {
+    opacity: 0;
+
+    &Active {
+        opacity: 1;
+        transition: opacity 300ms;
+    }
+}
+
+.mainBlockExit {
+    opacity: 1;
+
+    &Active {
+        opacity: 0;
+        transition: opacity 300ms;
+    }
+}
