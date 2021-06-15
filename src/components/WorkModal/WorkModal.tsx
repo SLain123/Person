@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAppDispatch } from '../../store/hooks';
 import { changeId } from '../../features/projects/projectsSlice';
 import { ProjectProps } from '../../types/projectsTypes';
 import { useTranslation } from 'react-i18next';
+import { CSSTransition } from 'react-transition-group';
 
 import GithubSvg from './GitSvg';
 import WwwSvg from './WwwSvg';
@@ -17,9 +18,14 @@ interface Props {
     setDisplayModal: any;
 }
 
-const WorkModal: React.FC<Props> = ({ projectData, activeProjectId, setDisplayModal }) => {
+const WorkModal: React.FC<Props> = ({
+    projectData,
+    activeProjectId,
+    setDisplayModal,
+}) => {
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
+    const [displayInfo, setDisplayInfo] = useState(false);
     const data = projectData.filter((data) =>
         activeProjectId === data.id ? data : null,
     )[0];
@@ -40,39 +46,45 @@ const WorkModal: React.FC<Props> = ({ projectData, activeProjectId, setDisplayMo
 
     const closeModalWindow = () => setDisplayModal(false);
     const changeProjectForKey = (e: KeyboardEvent) => {
-        if (e.code === 'ArrowLeft' || e.code === 'KeyA') {
-            if (activeProjectId === 1) {
-                dispatch(changeId(projectData.length));
-            } else {
-                dispatch(changeId(activeProjectId! - 1));
+        setDisplayInfo(false);
+        setTimeout(() => {
+            if (e.code === 'ArrowLeft' || e.code === 'KeyA') {
+                if (activeProjectId === 1) {
+                    dispatch(changeId(projectData.length));
+                } else {
+                    dispatch(changeId(activeProjectId! - 1));
+                }
+            } else if (e.code === 'ArrowRight' || e.code === 'KeyD') {
+                if (activeProjectId === projectData.length) {
+                    dispatch(changeId(1));
+                } else {
+                    dispatch(changeId(activeProjectId! + 1));
+                }
             }
-        } else if (e.code === 'ArrowRight' || e.code === 'KeyD') {
-            if (activeProjectId === projectData.length) {
-                dispatch(changeId(1));
-            } else {
-                dispatch(changeId(activeProjectId! + 1));
-            }
-        }
+        }, 250);
     };
     const changeProjectForBtn = (e: string) => {
-        if (e === 'prev') {
-            if (activeProjectId === 1) {
-                dispatch(changeId(projectData.length));
-            } else {
-                dispatch(changeId(activeProjectId! - 1));
+        setDisplayInfo(false);
+        setTimeout(() => {
+            if (e === 'prev') {
+                if (activeProjectId === 1) {
+                    dispatch(changeId(projectData.length));
+                } else {
+                    dispatch(changeId(activeProjectId! - 1));
+                }
+            } else if (e === 'next') {
+                if (activeProjectId === projectData.length) {
+                    dispatch(changeId(1));
+                } else {
+                    dispatch(changeId(activeProjectId! + 1));
+                }
             }
-        } else if (e === 'next') {
-            if (activeProjectId === projectData.length) {
-                dispatch(changeId(1));
-            } else {
-                dispatch(changeId(activeProjectId! + 1));
-            }
-        }
+        }, 250);
     };
 
     useEffect(() => {
         const back = document.querySelector('.background');
-        
+
         if (back) {
             back.addEventListener('click', closeModalWindow);
             window.addEventListener('keydown', changeProjectForKey);
@@ -86,71 +98,105 @@ const WorkModal: React.FC<Props> = ({ projectData, activeProjectId, setDisplayMo
         };
     });
 
+    useEffect(() => {
+        setTimeout(() => {
+            setDisplayInfo(true);
+        }, 0);
+    }, [activeProjectId]);
+
     return (
         <div className={classes.workModal}>
-            <button
-                type='button'
-                aria-label='close'
-                className={classes.closeBtn}
-                onClick={closeModalWindow}
+            <CSSTransition
+                in={displayInfo}
+                timeout={300}
+                classNames={{
+                    enter: classes.mainBlockEnter,
+                    enterActive: classes.mainBlockEnterActive,
+                    exit: classes.mainBlockExit,
+                    exitActive: classes.mainBlockExitActive,
+                }}
+                mountOnEnter
+                unmountOnExit
             >
-                <img src={close} alt='closeBtn' width={42} height={42} />
-            </button>
-            <button
-                type='button'
-                aria-label='display previous project'
-                className={[classes.manageBtn, classes.prevBtn].join(' ')}
-                onClick={() => changeProjectForBtn('prev')}
-            >
-                <img src={prev} alt='previousBtn' width={50} height={50} />
-            </button>
-            <button
-                type='button'
-                aria-label='display next project'
-                className={[classes.manageBtn, classes.nextBtn].join(' ')}
-                onClick={() => changeProjectForBtn('next')}
-            >
-                <img src={next} alt='nextBtn' width={50} height={50} />
-            </button>
-
-            <div className={classes.leftBlock}>
-                <img
-                    src={imgLink}
-                    alt='screenshot of the project'
-                    className={classes.projectImg}
-                />
-                <div>
-                    <p className={classes.stackTitle}>
-                        {t`projectModal.stack`}
-                    </p>
-                    <ul className={classes.stackList}>{stackList}</ul>
-                </div>
-                <div className={classes.linkBlock}>
-                    <a
-                        href={gitLink}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        aria-label='link to github project'
+                <div className={classes.workModalContainer}>
+                    {' '}
+                    <button
+                        type='button'
+                        aria-label='close'
+                        className={classes.closeBtn}
+                        onClick={closeModalWindow}
                     >
-                        <GithubSvg />
-                    </a>
-                    <a
-                        href={prodLink}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        aria-label='link to ready-made project in the cloud'
+                        <img
+                            src={close}
+                            alt='closeBtn'
+                            width={42}
+                            height={42}
+                        />
+                    </button>
+                    <button
+                        type='button'
+                        aria-label='display previous project'
+                        className={[classes.manageBtn, classes.prevBtn].join(
+                            ' ',
+                        )}
+                        onClick={() => changeProjectForBtn('prev')}
                     >
-                        <WwwSvg />
-                    </a>
+                        <img
+                            src={prev}
+                            alt='previousBtn'
+                            width={50}
+                            height={50}
+                        />
+                    </button>
+                    <button
+                        type='button'
+                        aria-label='display next project'
+                        className={[classes.manageBtn, classes.nextBtn].join(
+                            ' ',
+                        )}
+                        onClick={() => changeProjectForBtn('next')}
+                    >
+                        <img src={next} alt='nextBtn' width={50} height={50} />
+                    </button>
+                    <div className={classes.leftBlock}>
+                        <img
+                            src={imgLink}
+                            alt='screenshot of the project'
+                            className={classes.projectImg}
+                        />
+                        <div>
+                            <p className={classes.stackTitle}>
+                                {t`projectModal.stack`}
+                            </p>
+                            <ul className={classes.stackList}>{stackList}</ul>
+                        </div>
+                        <div className={classes.linkBlock}>
+                            <a
+                                href={gitLink}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                aria-label='link to github project'
+                            >
+                                <GithubSvg />
+                            </a>
+                            <a
+                                href={prodLink}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                aria-label='link to ready-made project in the cloud'
+                            >
+                                <WwwSvg />
+                            </a>
+                        </div>
+                    </div>
+                    <div className={classes.rightBlock}>
+                        <h3 className={classes.title}>{title}</h3>
+                        <h4 className={classes.subTitle}>{subTitle}</h4>
+                        <p className={classes.techTitle}>{common}</p>
+                        <ul className={classes.techList}>{techList}</ul>
+                    </div>
                 </div>
-            </div>
-
-            <div className={classes.rightBlock}>
-                <h3 className={classes.title}>{title}</h3>
-                <h4 className={classes.subTitle}>{subTitle}</h4>
-                <p className={classes.techTitle}>{common}</p>
-                <ul className={classes.techList}>{techList}</ul>
-            </div>
+            </CSSTransition>
         </div>
     );
 };
