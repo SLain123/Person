@@ -1,10 +1,10 @@
 import React from 'react';
-import { SkillProps } from '../../types/aboutTypes';
+import { SkillList } from '../../types/aboutTypes';
 
 import classes from './SkillRange.module.scss';
 
-interface Props extends SkillProps {
-    onChangeFunc: (skillName: string, skillValue: number) => void;
+interface Props extends SkillList {
+  onChangeFunc: (skillName: string, skillValue: number) => void;
 }
 
 const SkillRange: React.FC<Props> = ({
@@ -28,7 +28,7 @@ const SkillRange: React.FC<Props> = ({
                 name={skillName}
                 min={0}
                 max={100}
-                step={1}
+                step={0.5}
                 value={skillValue}
                 onChange={(e) =>
                     onChangeFunc(e.target.name, Number(e.target.value))
