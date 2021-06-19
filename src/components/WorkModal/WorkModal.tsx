@@ -110,10 +110,10 @@ const WorkModal: React.FC<Props> = ({
                 in={displayInfo}
                 timeout={300}
                 classNames={{
-                    enter: classes.mainBlockEnter,
-                    enterActive: classes.mainBlockEnterActive,
-                    exit: classes.mainBlockExit,
-                    exitActive: classes.mainBlockExitActive,
+                    enter: classes.workModalEnter,
+                    enterActive: classes.workModalEnterActive,
+                    exit: classes.workModalExit,
+                    exitActive: classes.workModalExitActive,
                 }}
                 mountOnEnter
                 unmountOnExit

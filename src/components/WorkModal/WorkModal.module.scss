@@ -24,6 +24,24 @@ $tag-grad: linear-gradient(
         width: 100%;
         display: flex;
     }
+
+    &Enter {
+        opacity: 0;
+
+        &Active {
+            opacity: 1;
+            transition: opacity 300ms;
+        }
+    }
+
+    &Exit {
+        opacity: 1;
+
+        &Active {
+            opacity: 0;
+            transition: opacity 300ms;
+        }
+    }
 }
 
 .closeBtn {
@@ -210,23 +228,5 @@ $tag-grad: linear-gradient(
         -webkit-transform: rotate3d(0, 0, 1, 0deg);
         -ms-transform: rotate3d(0, 0, 1, 0deg);
         transform: rotate3d(0, 0, 1, 0deg);
-    }
-}
-
-.mainBlockEnter {
-    opacity: 0;
-
-    &Active {
-        opacity: 1;
-        transition: opacity 300ms;
-    }
-}
-
-.mainBlockExit {
-    opacity: 1;
-
-    &Active {
-        opacity: 0;
-        transition: opacity 300ms;
     }
 }

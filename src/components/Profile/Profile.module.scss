@@ -1,0 +1,31 @@
+.profile {
+    &List {
+        padding: 0;
+        list-style: none;
+    }
+
+    &Item {
+        margin: 30px 0;
+        display: flex;
+        flex-flow: column;
+
+        &Title {
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 17px;
+            line-height: 34px;
+            font-weight: 700;
+        }
+
+        &Info {
+            color: #888888;
+            font-size: 16px;
+        }
+    }
+}
+
+.title {
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}

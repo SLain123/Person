@@ -1,7 +1,7 @@
 {
     "header": {
         "projects": "Projects",
-        "skills": "Skills",
+        "about": "about",
         "timeline": "TimeLine",
         "contacts": "Contact"
     },
@@ -113,5 +113,19 @@
     },
     "projectModal": {
         "stack": "The technology stack involved in the project:"
+    },
+    "profile": {
+        "title": "Profile:",
+        "titleFirst": "Full name:",
+        "titleSecond": "Birth Date:",
+        "titleThird": "Residency:",
+        "titleFourth": "E-mail:",
+        "fullName": "Lamzov Artem Alexandrovich",
+        "date": "July 20, 1989",
+        "city": "Mosсow, Russia"
+    },
+    "about": {
+        "title": "A little about me:",
+        "text": "I have been engaged in frontend development since 2019, I write on React/Redux/ts. I prefer a functional approach, actively using strict typing. I have experience working as a team on GitLab."
     }
 }

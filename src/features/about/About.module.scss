@@ -1,0 +1,23 @@
+.about {
+    &Block {
+        width: 85%;
+        max-width: 1280px;
+        background: #ffffff;
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+        list-style: none;
+        padding: 15px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        min-height: 75vh;
+        flex-flow: wrap;
+    }
+
+    &Info {
+        width: 100%;
+    }
+}

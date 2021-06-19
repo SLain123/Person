@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Welcome from '../components/Welcome';
 import LangChanger from '../components/LangChanger';
 import Projects from '../features/projects';
+import About from '../features/about';
 
 import classes from './App.module.scss';
 
@@ -12,6 +13,7 @@ const App: React.FC = () => {
     const routes = [
         { path: '/', name: 'Welcome', Component: Welcome },
         { path: '/works', name: 'Projects', Component: Projects },
+        { path: '/about', name: 'About', Component: About },
     ];
 
     const RouteList = routes.map(({ path, Component }) => (

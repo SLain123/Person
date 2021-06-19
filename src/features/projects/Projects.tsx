@@ -9,7 +9,7 @@ import { CSSTransition } from 'react-transition-group';
 import classes from './Projects.module.scss';
 
 const Projects: React.FC = () => {
-    const [activeProject, setActiveProject] = useState<number>(1);
+    const [activeProject, setActiveProject] = useState<number>(8);
     const [displayModal, setDisplayModal] = useState(false);
     const activeProjectId = useAppSelector(selectProjectId);
     const dispatch = useAppDispatch();
