@@ -2,19 +2,13 @@ import React from 'react';
 import SkillRange from '../SkillRange';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import {
-    skillList,
-    skillRatio,
-    skillPoints,
-    changeSkillValue,
-} from '../../features/about/aboutSlice';
+import { skillList, changeSkillValue } from '../../features/about/aboutSlice';
+import { getSkillListValue } from './skillAlgorithm';
 
 import classes from './Skills.module.scss';
 
 const Skills: React.FC = () => {
     const skillData = useAppSelector(skillList);
-    const ratio = useAppSelector(skillRatio);
-    const points = useAppSelector(skillPoints);
     const dispatch = useAppDispatch();
     const { t } = useTranslation();
 
@@ -22,24 +16,12 @@ const Skills: React.FC = () => {
         targetName: string,
         targetValue: number,
     ) => {
-        const newRatio: any = {};
-
-        skillData.forEach(({ skillValue, skillName }) => {
-            newRatio[skillName] = points / skillValue;
-        });
-
-        console.log(newRatio);
-
-        const newList = skillData.map((data) => {
-            const { skillName } = data;
-            if (skillName === targetName) {
-                const newValue = targetValue >= 50 ? targetValue : 50;
-                return { skillName, skillValue: newValue };
-            } else {
-                return data;
-            }
-        });
-        dispatch(changeSkillValue({ skillRatio: ratio, skillList: newList }));
+        const newSkillListValue = getSkillListValue(
+            targetName,
+            targetValue,
+            skillData,
+        );
+        dispatch(changeSkillValue(newSkillListValue));
     };
 
     const skillRangeList = skillData.map((data) => (

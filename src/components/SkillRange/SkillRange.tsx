@@ -4,7 +4,7 @@ import { SkillList } from '../../types/aboutTypes';
 import classes from './SkillRange.module.scss';
 
 interface Props extends SkillList {
-  onChangeFunc: (skillName: string, skillValue: number) => void;
+    onChangeFunc: (skillName: string, skillValue: number) => void;
 }
 
 const SkillRange: React.FC<Props> = ({
@@ -28,10 +28,10 @@ const SkillRange: React.FC<Props> = ({
                 name={skillName}
                 min={0}
                 max={100}
-                step={0.5}
+                step={1}
                 value={skillValue}
-                onChange={(e) =>
-                    onChangeFunc(e.target.name, Number(e.target.value))
+                onChange={(evt) =>
+                    onChangeFunc(evt.target.name, Number(evt.target.value))
                 }
             />
             <label className={classes.skillRangeValue} htmlFor={skillName}>
