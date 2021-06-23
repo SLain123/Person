@@ -2,6 +2,7 @@
     width: 50%;
     display: flex;
     flex-flow: column;
+    position: relative;
 
     &List {
         width: 100%;
@@ -21,4 +22,30 @@
         font-size: 22px;
         text-transform: uppercase;
     }
+
+    &Enter {
+        opacity: 0;
+
+        &Active {
+            opacity: 1;
+            transition: opacity 300ms;
+        }
+    }
+
+    &Exit {
+        opacity: 1;
+
+        &Active {
+            transition: opacity 300ms;
+            opacity: 0;
+        }
+    }
+}
+
+.tipsBtn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    cursor: pointer;
+
 }

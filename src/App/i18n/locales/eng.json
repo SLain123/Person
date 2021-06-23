@@ -127,5 +127,36 @@
     "about": {
         "title": "A little about me:",
         "text": "I have been engaged in frontend development since 2019, I write on React/Redux/ts. I prefer a functional approach, actively using strict typing. I have experience working as a team on GitLab."
+    },
+    "skills": {
+        "title": "Interactive skills panel:"
+    },
+    "popup": {
+        "tips": "The panel is fully interactive, you can try to 'create' the perfect balance of knowledge and skills. The main thing to remember is that this is a balance and increasing some parameter will inevitably lose you in another one...",
+        "html": {
+            "first": "When writing HTML markup, I adhere to the following principles: valid markup according to the latest HTML5 standard, compliance with the semantically correct structure, ensuring accessibility.",
+            "second": "Code minification, image compression, I try to achieve the best possible indicators of Lighthouse Test."
+        },
+        "css": {
+            "first": "I use the SCSS preprocessor extensively when working with styles: imports, variables, inheritance.",
+            "second": "I actively use BEM methodology: naming, mixes, reusability of blocks and modularity of styles.",
+            "third": "I use linter not only for 'linting' program code, but also to ensure the purity of writing stylistic files."
+        },
+        "js": {
+            "first": "When you write code utilizing the most modern features of the standard ES6: the destructurization, arrow functions, classes, etc.",
+            "second": "Used a bunch of es-lint&prettier (including pre-commit) to ensure similar and clean code structure.",
+            "third": "Thoughtful naming for variables, variables through closure for protection as necessary, and other proven design patterns.",
+            "fourth": "Minification of the resulting code and transpiling it to provide a better user experience with low bandwidth of Internet or when using old browsers."
+        },
+        "react": {
+            "first": "I prefer a functional approach for creating components, I actively use hooks.",
+            "second": "I use proven practices: a single responsibility for each component, one component - one file, HOC where appropriate, and so on.",
+            "third": "I use Redux as a 'state menager', I use Redux Toolkit and Redux hooks.",
+            "fourth": "I by yourself test the created components using various scenarios to minimize bugs."
+        },
+        "ts": {
+            "first": "I mainly use basic types, generics, and interfaces for typing.",
+            "second": "I actively use the built-in React types for typing react components and synthetic events."
+        }
     }
 }

@@ -1,0 +1,45 @@
+$grey-bg: #414140;
+
+.popup {
+    &Window {
+        position: absolute;
+        background: $grey-bg;
+        bottom: 40px;
+        color: white;
+        padding: 15px;
+        border-radius: 5px;
+        z-index: 12;
+        min-width: 280px;
+        border: none;
+        cursor: pointer;
+        font-size: 17px;
+
+        &:after {
+            content: '';
+            position: absolute;
+            border: 10px solid transparent;
+            border-top: 10px solid $grey-bg;
+            bottom: -20px;
+            left: 100px;
+            z-index: 12;
+        }
+    }
+
+    &Message {
+        text-align: justify;
+        margin: 0 0 15px 0;
+        line-height: 25px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &Left {
+        left: 0;
+    }
+
+    &Right {
+        left: -105px;
+    }
+}

@@ -15,7 +15,7 @@ import next from './next.svg';
 interface Props {
     projectData: ProjectProps[];
     activeProjectId: number;
-    setDisplayModal: any;
+    setDisplayModal: (arg: boolean) => void;
 }
 
 const WorkModal: React.FC<Props> = ({

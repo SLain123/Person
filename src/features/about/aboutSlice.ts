@@ -4,6 +4,7 @@ import { SkillList } from '../../types/aboutTypes';
 
 export interface AboutState {
     skillList: SkillList[];
+    skillMessageStatus: null | string;
 }
 
 const initialState: AboutState = {
@@ -14,6 +15,7 @@ const initialState: AboutState = {
         { skillName: 'React', skillValue: 80 },
         { skillName: 'TypeScript', skillValue: 65 },
     ],
+    skillMessageStatus: null,
 };
 
 export const aboutSlice = createSlice({
@@ -23,10 +25,15 @@ export const aboutSlice = createSlice({
         changeSkillValue: (state, action: PayloadAction<SkillList[]>) => {
             state.skillList = action.payload;
         },
+        changeMessageStatus: (state, action: PayloadAction<string | null>) => {
+            state.skillMessageStatus = action.payload;
+        },
     },
 });
 
-export const { changeSkillValue } = aboutSlice.actions;
+export const { changeSkillValue, changeMessageStatus } = aboutSlice.actions;
 export const skillList = (state: RootState) => state.about.skillList;
+export const skillMessageStatus = (state: RootState) =>
+    state.about.skillMessageStatus;
 
 export default aboutSlice.reducer;
