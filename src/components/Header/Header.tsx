@@ -51,7 +51,7 @@ const Header: React.FC<IProps> = ({ match }) => {
     const menuDataList: IMenuItems[] = [
         { name: t`header.projects`, urlName: 'works' },
         { name: t`header.about`, urlName: 'about' },
-        { name: t`header.timeline`, urlName: 'time-line' },
+        { name: t`header.timeline`, urlName: 'timeline' },
         { name: t`header.contacts`, urlName: 'contact' },
     ];
 
