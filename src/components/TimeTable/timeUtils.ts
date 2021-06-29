@@ -1,9 +1,5 @@
 import moment from 'moment';
-
-interface Week {
-    begin: string;
-    end: string;
-}
+import { Week } from '../../types/timelineTypes';
 
 export const findNextMonday = (startDate: Date) => {
     if (startDate.getDay() === 1) {

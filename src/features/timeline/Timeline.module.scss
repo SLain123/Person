@@ -12,14 +12,18 @@
         padding: 15px;
         margin: 0;
         display: flex;
-        justify-content: center;
+        align-items: center;
         min-height: 75vh;
-        flex-flow: wrap;
+        flex-flow: column;
     }
 
-    // &Info {
-    //     width: 100%;
-    //     display: flex;
-    //     justify-content: space-evenly;
-    // }
+    &Title {
+        text-align: justify;
+        font-family: 'lora', serif;
+        font-size: 21px;
+        line-height: 28px;
+        color: #888888;
+        font-weight: 500;
+        max-width: 760px;
+    }
 }

@@ -8,8 +8,12 @@ const Timeline: React.FC = () => {
     const { t } = useTranslation();
     return (
         <div className={classes.timelineBlock}>
-            <h4 className={classes.title}>{t`timeline.title`}</h4>
+            <h4 className={classes.timelineTitle}>{t`timeline.titleFirst`}</h4>
+            <p className={classes.timelineTitle}>{t`timeline.titleSecond`}</p>
             <TimeTable timeToStart={new Date(2019, 8, 23)} />
+            <p
+                className={classes.timelineTitle}
+            >{t`timeline.titleForFuture`}</p>
         </div>
     );
 };

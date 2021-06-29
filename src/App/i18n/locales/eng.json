@@ -158,5 +158,10 @@
             "first": "I mainly use basic types, generics, and interfaces for typing.",
             "second": "I actively use the built-in React types for typing react components and synthetic events."
         }
+    },
+    "timeline": {
+        "titleFirst": "This section presents a timeline, and a list of technologies that I plan to study and use in the near future in your projects.",
+        "titleSecond": "Timeline displays the total time of study and use all the technologies connected with the area of front-end.",
+        "titleForFuture": "The list of technologies that have been studied or to be studied me in the near future:"
     }
 }

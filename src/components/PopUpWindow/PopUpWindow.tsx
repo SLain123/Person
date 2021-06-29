@@ -7,13 +7,22 @@ import classes from './PopUpWindow.module.scss';
 interface Props {
     messages: string[];
     position: 'left' | 'right';
+    textAlign?: string;
 }
 
-const PopUpWindow: React.FC<Props> = ({ messages, position }) => {
+const PopUpWindow: React.FC<Props> = ({
+    messages,
+    position,
+    textAlign = 'justify',
+}) => {
     const dispatch = useAppDispatch();
     const messageList = messages.map((message) => {
+        const textStyle =
+            textAlign === 'center'
+                ? [classes.popupMessage, classes.popupCenter].join(' ')
+                : [classes.popupMessage, classes.popupJustify].join(' ');
         return (
-            <p key={message} className={classes.popupMessage}>
+            <p key={message} className={textStyle}>
                 {message}
             </p>
         );

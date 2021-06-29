@@ -1,0 +1,65 @@
+$yellow: #ffde00;
+$border-cell: #920849;
+
+.timecell {
+    &Block {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border: 1px solid $border-cell;
+        border-radius: 2px;
+        margin: 3px;
+
+        &:nth-child(even) {
+            background-image: url('./mouse.svg');
+        }
+        &:nth-child(odd) {
+            background-image: url('./keyboard.svg');
+        }
+        &:nth-child(8n-4) {
+            background-image: url('./monitor.svg');
+        }
+        &:nth-child(8n-7) {
+            background-image: url('./monitor.svg');
+        }
+        &:nth-child(8n-6) {
+            background-image: url('./smartphone.svg');
+        }
+        &:nth-child(8n-1) {
+            background-image: url('./smartphone.svg');
+        }
+    }
+
+    &Info {
+        display: none;
+    }
+}
+
+.cellEnter {
+    opacity: 0;
+    transform: scale(5) translateY(-50px) rotate(-90deg);
+
+    &Active {
+        opacity: 1;
+        transform: scale(1) translateY(0) rotate(0);
+        transition: opacity 900ms, transform 1000ms;
+    }
+}
+
+.dateEnter {
+    opacity: 0;
+
+    &Active {
+        opacity: 1;
+        transition: opacity 100ms;
+    }
+}
+
+.dateExit {
+    opacity: 1;
+
+    &Active {
+        transition: opacity 100ms;
+        opacity: 0;
+    }
+}
