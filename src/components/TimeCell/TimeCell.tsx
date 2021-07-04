@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Week } from '../../types/timelineTypes';
 import { CSSTransition } from 'react-transition-group';
 import PopUpWindow from '../PopUpWindow';
@@ -12,6 +12,7 @@ interface Props extends Week {
 const TimeCell: React.FC<Props> = ({ begin, end, timeout }) => {
     const [displayCell, setDisplayCell] = useState(false);
     const [displayDate, setDisplayDate] = useState(false);
+    const cellRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         setTimeout(() => setDisplayCell(true), timeout);
@@ -23,16 +24,23 @@ const TimeCell: React.FC<Props> = ({ begin, end, timeout }) => {
             timeout={1000}
             mountOnEnter
             unmountOnExit
+            onEntered={() => {
+                if (cellRef.current !== null) {
+                    cellRef.current.addEventListener('mouseenter', () =>
+                        setDisplayDate(true),
+                    );
+
+                    cellRef.current.addEventListener('mouseleave', () =>
+                        setDisplayDate(false),
+                    );
+                }
+            }}
             classNames={{
                 enter: classes.cellEnter,
                 enterActive: classes.cellEnterActive,
             }}
         >
-            <div
-                className={classes.timecellBlock}
-                onMouseEnter={() => setDisplayDate(true)}
-                onMouseLeave={() => setDisplayDate(false)}
-            >
+            <div className={classes.timecellBlock} ref={cellRef}>
                 <CSSTransition
                     in={displayDate}
                     timeout={100}
