@@ -1,0 +1,21 @@
+.techlist {
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    max-width: 760px;
+}
+
+.base {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    letter-spacing: 1.3px;
+    margin: 10px 0;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.inWork {
+    text-decoration: underline;
+}

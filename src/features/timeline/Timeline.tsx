@@ -1,6 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import TimeTable from '../../components/TimeTable';
+import TechList from '../../components/TechList';
+import { techData } from './timelineData';
 
 import classes from './Timeline.module.scss';
 
@@ -14,6 +16,7 @@ const Timeline: React.FC = () => {
             <p
                 className={classes.timelineTitle}
             >{t`timeline.titleForFuture`}</p>
+            <TechList techData={techData} />
         </div>
     );
 };
