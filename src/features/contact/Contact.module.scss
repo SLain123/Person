@@ -1,0 +1,40 @@
+.contact {
+    &Block {
+        width: 85%;
+        max-width: 1280px;
+        background: #ffffff;
+        position: absolute;
+        top: 150px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+        list-style: none;
+        padding: 15px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        min-height: 75vh;
+        flex-flow: column;
+    }
+
+    &Title {
+        margin: 28px 0;
+        font-size: 24px;
+        line-height: 40px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    &List {
+        padding: 0;
+        list-style: none;
+    }
+
+    &Item {
+        margin: 20px 0;
+    }
+
+    &Img {
+        margin-top: 40px;
+    }
+}

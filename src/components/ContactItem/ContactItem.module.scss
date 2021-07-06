@@ -1,0 +1,20 @@
+$link-hover: #cc005f;
+$link-active: #920849;
+
+.contact {
+    &Text {
+        font-size: 20px;
+        min-width: 175px;
+        display: inline-block;
+    }
+
+    &Link {
+        font-size: 20px;
+        text-decoration: none;
+        color: $link-hover;
+
+        &:hover {
+            color: $link-active;
+        }
+    }
+}

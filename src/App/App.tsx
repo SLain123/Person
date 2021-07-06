@@ -7,6 +7,7 @@ import LangChanger from '../components/LangChanger';
 import Projects from '../features/projects';
 import About from '../features/about';
 import Timeline from '../features/timeline';
+import Contact from '../features/contact';
 
 import classes from './App.module.scss';
 
@@ -16,6 +17,7 @@ const App: React.FC = () => {
         { path: '/works', name: 'Projects', Component: Projects },
         { path: '/about', name: 'About', Component: About },
         { path: '/timeline', name: 'Timeline', Component: Timeline },
+        { path: '/contact', name: 'Contact', Component: Contact },
     ];
 
     const RouteList = routes.map(({ path, Component }) => (
