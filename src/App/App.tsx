@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import Header from '../components/Header';
@@ -8,6 +8,7 @@ import Projects from '../features/projects';
 import About from '../features/about';
 import Timeline from '../features/timeline';
 import Contact from '../features/contact';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 import classes from './App.module.scss';
 
@@ -43,11 +44,19 @@ const App: React.FC = () => {
     ));
 
     return (
-        <>
+        <Scrollbars
+            style={{ height: '100vh' }}
+            hideTracksWhenNotNeeded
+            autoHide
+            autoHideTimeout={200}
+            renderThumbVertical={(props) => (
+                <div {...props} className='thumb' />
+            )}
+        >
             <Route path='*' component={Header} />
             <LangChanger />
             {RouteList}
-        </>
+        </Scrollbars>
     );
 };
 
