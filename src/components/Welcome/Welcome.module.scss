@@ -14,6 +14,25 @@ $hello-world: #cc005f;
     flex-flow: column;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 1279px) {
+        padding: 10px;
+        width: 100%;
+        height: auto;
+        max-height: none;
+    }
+
+    @media screen and (max-height: 450px) {
+        top: 66%;
+    }
+
+    @media screen and (max-height: 400px) {
+        top: 78%;
+    }
+
+    @media screen and (max-height: 350px) {
+        top: 85%;
+    }
 }
 
 .titleList {
@@ -23,6 +42,7 @@ $hello-world: #cc005f;
     justify-content: center;
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 .titleItemEnter {
@@ -57,6 +77,15 @@ $hello-world: #cc005f;
     font-size: 2vw;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
+    white-space: nowrap;
+
+    @media screen and (max-width: 1279px) {
+        font-size: 30px;
+    }
+
+    @media screen and (max-width: 767px) {
+        font-size: 20px;
+    }
 }
 
 .title {
@@ -66,6 +95,15 @@ $hello-world: #cc005f;
     font-size: 7vw;
     margin: 10px 0;
     font-weight: 500;
+    white-space: nowrap;
+
+    @media screen and (max-width: 1279px) {
+        font-size: 85px;
+    }
+
+    @media screen and (max-width: 767px) {
+        font-size: 42px;
+    }
 }
 
 .subTitle {
@@ -76,12 +114,17 @@ $hello-world: #cc005f;
     letter-spacing: 5px;
     color: #ffffff;
     font-weight: 500;
+    white-space: nowrap;
 
     &:first-child::before {
         content: '|';
         display: inline-block;
         padding: 0 14px 0 8px;
         color: rgba(255, 255, 255, 0.3);
+
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
     }
 
     &::after {
@@ -90,11 +133,30 @@ $hello-world: #cc005f;
         display: inline-block;
         padding: 0 8px 0 14px;
         color: rgba(255, 255, 255, 0.3);
+
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 1279px) {
+        font-size: 21px;
+        letter-spacing: 2px;
+    }
+
+    @media screen and (max-width: 767px) {
+        font-size: 16px;
     }
 }
 
 .subTitleBlock {
     margin-top: 20px;
+
+    @media screen and (max-width: 767px) {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
 }
 
 .linkBtn {
@@ -135,6 +197,15 @@ $hello-world: #cc005f;
         bottom: 0%;
         top: auto;
         height: 100%;
+    }
+
+    @media screen and (max-width: 767px) {
+        font-size: 16px;
+        padding: 25px;
+    }
+
+    @media screen and (max-height: 400px) {
+        padding: 15px;
     }
 }
 
