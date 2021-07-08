@@ -1,7 +1,17 @@
-$black-grad-right: linear-gradient(90deg, rgba(22,21,21,1) 0%, rgba(44,46,55,1) 90%, rgba(41, 47, 54,1) 100%);
-$black-grad-left: linear-gradient(90deg, rgba(41, 47, 54,1) 0%, rgba(44,46,55,1) 10%, rgba(22,21,21,1) 100%);
-$shadow: #8A8A8A;
-$link-main: #F8F2F4;
+$black-grad-right: linear-gradient(
+    90deg,
+    rgba(22, 21, 21, 1) 0%,
+    rgba(44, 46, 55, 1) 90%,
+    rgba(41, 47, 54, 1) 100%
+);
+$black-grad-left: linear-gradient(
+    90deg,
+    rgba(41, 47, 54, 1) 0%,
+    rgba(44, 46, 55, 1) 10%,
+    rgba(22, 21, 21, 1) 100%
+);
+$shadow: #8a8a8a;
+$link-main: #f8f2f4;
 $link-hover: #cc005f;
 $link-active: #920849;
 
@@ -10,7 +20,7 @@ $link-active: #920849;
     justify-content: center;
     position: relative;
     padding-top: 5px;
-    
+
     &::before {
         content: '';
         width: 50%;
@@ -34,6 +44,11 @@ $link-active: #920849;
         transform: translateY(4%) skewY(-178deg);
         box-shadow: -100px 10px 25px $shadow;
     }
+
+    @media screen and (max-width: 767px) {
+        justify-content: space-evenly;
+        padding-top: 0;
+    }
 }
 
 .list {
@@ -45,15 +60,30 @@ $link-active: #920849;
     align-items: center;
     z-index: 1;
     padding: 0;
+
+    @media screen and (max-width: 767px) {
+        flex-flow: column;
+    }
 }
 
 .item {
     padding: 0 10px;
+
+    @media screen and (max-width: 767px) {
+        padding: 0;
+        margin: 5px 0;
+    }
 }
 
 .logoLink {
     z-index: 1;
     margin: 0 80px;
+
+    @media screen and (max-width: 767px) {
+        margin: 5px 0;
+        display: flex;
+        align-items: center;
+    }
 }
 
 .disabled {
@@ -64,6 +94,11 @@ $link-active: #920849;
 .logoPic {
     height: 60px;
     z-index: 1;
+
+    @media screen and (max-width: 767px) {
+        height: 40px;
+        width: 40px;
+    }
 }
 
 .link {
@@ -73,11 +108,17 @@ $link-active: #920849;
     font-size: 20px;
     font-weight: 500;
     letter-spacing: 1.1px;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     transition: all 0.3s ease-in-out;
+    display: block;
+    text-align: center;
 
     &:hover {
-        color:  $link-hover;
+        color: $link-hover;
+    }
+
+    @media screen and (max-width: 767px) {
+        font-size: 15px;
     }
 }
 

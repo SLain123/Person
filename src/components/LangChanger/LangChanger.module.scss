@@ -12,4 +12,8 @@
     height: 35px;
     letter-spacing: 2px;
     font-size: .7vw;
+
+    @media screen and (max-width: 1279px) {
+        font-size: 12px;
+    }
 }
