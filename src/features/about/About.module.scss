@@ -15,6 +15,14 @@
         justify-content: center;
         min-height: 75vh;
         flex-flow: wrap;
+
+        @media screen and (max-width: 1279px) {
+            width: 95%;
+        }
+
+        @media screen and (max-width: 768px) {
+            top: 100px;
+        }
     }
 
     &Info {

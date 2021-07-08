@@ -24,6 +24,18 @@ $ninth-size: 44%;
     justify-content: center;
     min-height: 75vh;
     flex-flow: wrap;
+
+    @media screen and (max-width: 1279px) {
+        width: 95%;
+    }
+
+    @media screen and (max-width: 1024px) {
+        justify-content: space-around;
+    }
+
+    @media screen and (max-width: 768px) {
+        top: 100px;
+    }
 }
 
 .projectItem {
@@ -31,9 +43,38 @@ $ninth-size: 44%;
     height: 100%;
     border-radius: 2px;
 
+    @media screen and (max-width: 1024px) {
+        width: 45% !important;
+        transform: none !important;
+        position: static !important;
+        min-width: 0 !important;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        min-height: 350px;
+        max-height: 350px;
+        border: none !important;
+        background: rgb(196, 192, 192);
+    }
+
+    @media screen and (max-width: 768px) {
+        flex-flow: column;
+        width: 85% !important;
+        min-height: auto;
+        max-height: auto;
+    }
+
+    @media screen and (max-width: 400px) {
+        width: 98% !important;
+    }
+
     &FixHover {
         z-index: 10;
         transform: translate(0, 5px) scale(1.05) !important;
+
+        @media screen and (max-width: 1024px) {
+            transform: none !important;
+        }
     }
 }
 

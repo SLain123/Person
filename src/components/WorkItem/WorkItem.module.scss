@@ -6,6 +6,14 @@
         &:hover {
             filter: brightness(35%);
             border-radius: 2px;
+
+            @media screen and (max-width: 1024px) {
+                filter: none;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            max-height: 350px;
         }
     }
 
@@ -16,6 +24,12 @@
         padding: 0;
         display: flex;
         cursor: pointer;
+        position: relative;
+
+        @media screen and (max-width: 1024px) {
+            filter: brightness(75%);
+            border-radius: 2px;
+        }
     }
 
     &Title {
@@ -31,6 +45,17 @@
         z-index: 1;
         text-transform: uppercase;
         letter-spacing: 1.2px;
+
+        @media screen and (max-width: 1024px) {
+            color: #cc005f;
+            display: inline-block;
+            text-shadow: 1px 1px 10px white, -1px -1px 10px white,
+                -1px 1px 10px white, 1px -1px 10px white;
+        }
+
+        @media screen and (max-width: 400px) {
+            font-size: 16px;
+        }
     }
 }
 
@@ -38,7 +63,11 @@
     display: block;
 }
 
-.workItemTitle:hover + img{
+.workItemTitle:hover + img {
     filter: brightness(35%);
     border-radius: 2px;
+
+    @media screen and (max-width: 1024px) {
+        filter: none;
+    }
 }
