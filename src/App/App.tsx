@@ -45,6 +45,7 @@ const App: React.FC = () => {
 
     return (
         <Scrollbars
+            className='scroll'
             style={{ height: '100vh' }}
             hideTracksWhenNotNeeded
             autoHide

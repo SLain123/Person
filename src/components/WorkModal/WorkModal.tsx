@@ -44,7 +44,16 @@ const WorkModal: React.FC<Props> = ({
         </li>
     ));
 
-    const closeModalWindow = () => setDisplayModal(false);
+    const closeModalWindow = (e: Event | React.MouseEvent) => {
+        if (e.currentTarget !== null) {
+            const currentTarget = e.currentTarget as HTMLElement;
+            const firstChild = currentTarget.children[0];
+
+            if (firstChild === e.target) {
+                setDisplayModal(false);
+            }
+        }
+    };
     const changeProjectForKey = (e: KeyboardEvent) => {
         setDisplayInfo(false);
         setTimeout(() => {
@@ -83,16 +92,16 @@ const WorkModal: React.FC<Props> = ({
     };
 
     useEffect(() => {
-        const back = document.querySelector('.background');
+        const scrollBlock = document.querySelector('.scroll');
 
-        if (back) {
-            back.addEventListener('click', closeModalWindow);
+        if (scrollBlock) {
+            scrollBlock.addEventListener('click', closeModalWindow);
             window.addEventListener('keydown', changeProjectForKey);
         }
 
         return () => {
-            if (back) {
-                back.removeEventListener('click', closeModalWindow);
+            if (scrollBlock) {
+                scrollBlock.removeEventListener('click', closeModalWindow);
                 window.removeEventListener('keydown', changeProjectForKey);
             }
         };

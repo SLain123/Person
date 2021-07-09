@@ -19,10 +19,16 @@ $tag-grad: linear-gradient(
     margin: 0;
     display: flex;
     flex-flow: wrap;
+    box-sizing: border-box;
 
     &Container {
         width: 100%;
         display: flex;
+
+        @media screen and (max-width: 768px) {
+            flex-flow: column;
+            align-items: center;
+        }
     }
 
     &Enter {
@@ -41,6 +47,18 @@ $tag-grad: linear-gradient(
             opacity: 0;
             transition: opacity 300ms;
         }
+    }
+
+    @media screen and (max-width: 1280px) {
+        width: 98%;
+    }
+
+    @media screen and (max-width: 768px) {
+        top: 100px;
+    }
+
+    @media screen and (max-width: 767px) {
+        padding: 45px 5px 0 5px;
     }
 }
 
@@ -73,11 +91,20 @@ $tag-grad: linear-gradient(
     display: flex;
     flex-flow: column;
     justify-content: space-between;
+
+    @media screen and (max-width: 768px) {
+        width: 98%;
+    }
 }
 
 .rightBlock {
     width: 40%;
     margin-left: 15px;
+
+    @media screen and (max-width: 768px) {
+        width: 98%;
+        margin-left: 0;
+    }
 }
 
 .projectImg {
@@ -188,6 +215,10 @@ $tag-grad: linear-gradient(
     &:hover {
         opacity: 1;
         background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    @media screen and (max-width: 767px) {
+        display: none;
     }
 }
 
