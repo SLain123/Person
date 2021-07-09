@@ -22,6 +22,10 @@ $grey-bg: #414140;
             bottom: -20px;
             left: 100px;
             z-index: 12;
+
+            @media screen and (max-width: 1280px) {
+                display: none;
+            }
         }
     }
 
@@ -48,5 +52,9 @@ $grey-bg: #414140;
 
     &Right {
         left: -105px;
+
+        @media screen and (max-width: 1280px) {
+            left: -240px;
+        }
     }
 }
