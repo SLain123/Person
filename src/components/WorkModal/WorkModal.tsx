@@ -4,6 +4,7 @@ import { changeId } from '../../features/projects/projectsSlice';
 import { ProjectProps } from '../../types/projectsTypes';
 import { useTranslation } from 'react-i18next';
 import { CSSTransition } from 'react-transition-group';
+import { useSwipeable } from 'react-swipeable';
 
 import GithubSvg from './GitSvg';
 import WwwSvg from './WwwSvg';
@@ -91,6 +92,13 @@ const WorkModal: React.FC<Props> = ({
         }, 250);
     };
 
+    const swipeHandlers = useSwipeable({
+        onSwipedLeft: () => changeProjectForBtn('next'),
+        onSwipedRight: () => changeProjectForBtn('prev'),
+        preventDefaultTouchmoveEvent: true,
+        trackMouse: true,
+    });
+
     useEffect(() => {
         const scrollBlock = document.querySelector('.scroll');
 
@@ -127,7 +135,7 @@ const WorkModal: React.FC<Props> = ({
                 mountOnEnter
                 unmountOnExit
             >
-                <div className={classes.workModalContainer}>
+                <div className={classes.workModalContainer} {...swipeHandlers}>
                     {' '}
                     <button
                         type='button'
