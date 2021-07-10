@@ -31,6 +31,10 @@
         line-height: 40px;
         margin-bottom: 20px;
         text-align: center;
+
+        @media screen and (max-width: 767px) {
+            font-size: 22px;
+        }
     }
 
     &List {
@@ -44,5 +48,9 @@
 
     &Img {
         margin-top: 40px;
+
+        @media screen and (max-width: 767px) {
+            margin-top: 20px;
+        }
     }
 }

@@ -28,6 +28,11 @@ $border-cell: #920849;
         &:nth-child(8n-1) {
             background-image: url('./smartphone.svg');
         }
+
+        @media screen and (max-width: 767px) {
+            width: 22px;
+            height: 22px;
+        }
     }
 
     &Info {

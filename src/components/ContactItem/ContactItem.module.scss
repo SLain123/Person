@@ -6,6 +6,11 @@ $link-active: #920849;
         font-size: 20px;
         min-width: 175px;
         display: inline-block;
+
+        @media screen and (max-width: 767px) {
+            font-size: 15px;
+            min-width: 100px;
+        }
     }
 
     &Link {
@@ -15,6 +20,10 @@ $link-active: #920849;
 
         &:hover {
             color: $link-active;
+        }
+
+        @media screen and (max-width: 767px) {
+            font-size: 15px;
         }
     }
 }
