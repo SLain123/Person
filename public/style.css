@@ -34,10 +34,10 @@ body {
     border-radius: 2px;
     transition: all 0.3s ease-in-out;
     text-decoration: none;
+}
 
-    &:hover {
-        border-color: #cc005f;
-    }
+.btn:hover {
+    border-color: #cc005f;
 }
 
 .thumb {
@@ -54,6 +54,7 @@ body {
     src: url('./fonts/Roboto-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -62,6 +63,7 @@ body {
     src: url('./fonts/Roboto-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -70,4 +72,5 @@ body {
     src: url('./fonts/Lora-Medium.woff') format('woff');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }

@@ -6,8 +6,6 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import './App/i18n/i18nConfig';
 
-import './global/globalStyle.scss';
-
 ReactDOM.render(
     <Provider store={store}>
         <BrowserRouter>

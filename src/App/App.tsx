@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Route } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import Header from '../components/Header';
-import Welcome from '../components/Welcome';
 import LangChanger from '../components/LangChanger';
-import Projects from '../features/projects';
-import About from '../features/about';
-import Timeline from '../features/timeline';
-import Contact from '../features/contact';
 import { Scrollbars } from 'react-custom-scrollbars';
 
 import classes from './App.module.scss';
+
+const Welcome = React.lazy(() => import('../components/Welcome'));
+const Projects = React.lazy(() => import('../features/projects'));
+const About = React.lazy(() => import('../features/about'));
+const Timeline = React.lazy(() => import('../features/timeline'));
+const Contact = React.lazy(() => import('../features/contact'));
 
 const App: React.FC = () => {
     const routes = [
@@ -56,7 +57,7 @@ const App: React.FC = () => {
         >
             <Route path='*' component={Header} />
             <LangChanger />
-            {RouteList}
+            <Suspense fallback={<div>Загрузка...</div>}>{RouteList}</Suspense>
         </Scrollbars>
     );
 };
