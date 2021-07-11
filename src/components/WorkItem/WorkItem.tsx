@@ -1,7 +1,9 @@
 import React from 'react';
 import { description } from '../../types/projectsTypes';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import classes from './WorkItem.module.scss';
+import spin from './spin.gif';
 
 interface Props {
     description: description;
@@ -14,12 +16,15 @@ const WorkItem: React.FC<Props> = ({ description, imgLink }) => {
     return (
         <button className={classes.workItemBtn} type='button'>
             <p className={classes.workItemTitle}>{title}</p>
-            <img
+
+            <LazyLoadImage
                 className={classes.workItemPic}
                 src={imgLink}
                 alt='screenshot of the project'
                 width={550}
                 height={370}
+                threshold={10}
+                placeholderSrc={spin}
             />
         </button>
     );
