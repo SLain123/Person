@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import Header from '../components/Header';
 import LangChanger from '../components/LangChanger';
 import { Scrollbars } from 'react-custom-scrollbars';
+import Spinner from '../components/Spinner';
 
 import classes from './App.module.scss';
 
@@ -57,7 +58,7 @@ const App: React.FC = () => {
         >
             <Route path='*' component={Header} />
             <LangChanger />
-            <Suspense fallback={<div>Загрузка...</div>}>{RouteList}</Suspense>
+            <Suspense fallback={<Spinner />}>{RouteList}</Suspense>
         </Scrollbars>
     );
 };
