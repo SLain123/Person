@@ -15,14 +15,12 @@
 
 .photo {
     border-radius: 100%;
-    margin: 0 30px;
 
     @media screen and (max-width: 767px) {
         margin: 0;
     }
 
     @media screen and (max-width: 550px) {
-        margin: auto;
         margin-bottom: 10px;
     }
 }
@@ -39,6 +37,7 @@
 
         @media screen and (max-width: 550px) {
             flex-flow: column;
+            align-items: center;
         }
     }
 

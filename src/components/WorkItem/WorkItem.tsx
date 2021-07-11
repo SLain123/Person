@@ -3,7 +3,7 @@ import { description } from '../../types/projectsTypes';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import classes from './WorkItem.module.scss';
-import spin from './spin.gif';
+import spin from '../Spinner/spin.gif';
 
 interface Props {
     description: description;
